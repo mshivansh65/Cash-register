@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+
+    
+    <h1>Cash Register Mangaer</h1>
+    <p>
+      Enter the amount and cash given by the costomer and know minimum number of
+      notes to return.
+    </p>
+    <!-- section--bill-amount -->
+    <section class="section section--bill-amount">
+
+      <h2>Bill amount</h2>
+      <input class="input bill-amount"> 
+      <button class = "btn btn-next">Next</button>
+    </section>
+    <!-- section--cash-given -->
+    <section class="section section--cash-given">
+      
+      <h2>Cash Given</h2>
+      <input class="input cash-given">
+      <button class = "btn btn-check">Check</button>
+    </section>
+    <!-- section--return-change -->
+    <section class="section section--return-change">
+
+      <h2>Return Change</h2>
+      <table class="table">
+        <tr class="table-row">
+          <th class="table-conc ">No.of Notes</th>
+          <th class="table-conc note--2000">&nbsp;</th>
+          <th class="table-conc note--500">&nbsp;</th>
+          <th class="table-conc note--100">&nbsp;</th>
+          <th class="table-conc note--20">&nbsp;</th>
+          <th class="table-conc note--10>&nbsp;</th>
+          <th class="table-conc note--5">&nbsp;</th>
+          <th class="table-conc note--1">&nbsp;</th>
+          
+        </tr>
+        <tr class="table-row">
+          <td class="table-conc">Note</td>
+          <td class="table-conc">2000</td>
+          <td class="table-conc">500</td>
+          <td class="table-conc">100</td>
+          <td class="table-conc">20</td>
+          <td class="table-conc">10</td>
+          <td class="table-conc">5</td>
+          <td class="table-conc">1</td>
+        </tr>
+        
+      </table>
+    </section>
+    </div>
+  </body>
+  <script src="/script.js"></script>
+</html>
