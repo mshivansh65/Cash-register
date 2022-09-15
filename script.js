@@ -26,6 +26,9 @@ btnNext.addEventListener("click", function () {
         section.classList.remove("hidden");
       }
     });
+  } else {
+    if (value < 0) showMessage("Insufficent funds");
+    else if (Number.isNaN(value)) showMessage("Please enter a valid number");
   }
 });
 
@@ -61,5 +64,11 @@ btnCheck.addEventListener("click", function () {
   if (value && value > billAmount) {
     cashGiven = value;
     calculateChange(cashGiven - billAmount);
+  } else {
+    if (value < billAmount) showMessage("Insufficent funds");
+    else if (Number.isNaN(value)) showMessage("Please enter a valid amount");
   }
 });
+function showMessage(Message) {
+  alert(Message);
+}
