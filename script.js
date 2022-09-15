@@ -3,6 +3,8 @@ const btnCheck = document.querySelector(".btn-check");
 const inputBillAmountEl = document.querySelector(".bill-amount");
 const inputCashGivenEl = document.querySelector(".cash-given");
 const sections = document.querySelectorAll(".section");
+const tableContentsEl = document.querySelectorAll(".table-conc");
+
 const numerators = [2000, 500, 100, 20, 10, 5, 1];
 const notesToGive = [0, 0, 0, 0, 0, 0, 0];
 let billAmount = 0;
@@ -26,17 +28,32 @@ btnNext.addEventListener("click", function () {
     });
   }
 });
-// sections.forEach((section) => {
-//   if (section.classList.contains("section--return-change")) {
-//     section.classList.remove("hidden");
-//   }
-// });
+
 function calculateChange(value) {
+  sections.forEach((section) => {
+    if (section.classList.contains("section--return-change")) {
+      section.classList.remove("hidden");
+    }
+  });
   numerators.forEach((note, i) => {
     const que = Math.floor(value / note);
     const rem = value % note;
-    console.log(`${note} : ${que}`);
+
     value = rem;
+    // console.log(`${note} ${que}`);
+    if (que > 0) {
+      tableContentsEl.forEach((tablecontentEl) => {
+        if (tablecontentEl.classList.contains(`note--${note}`)) {
+          tablecontentEl.textContent = que;
+        }
+      });
+    } else {
+      tableContentsEl.forEach((tablecontentEl) => {
+        if (tablecontentEl.classList.contains(`note--${note}`)) {
+          tablecontentEl.textContent = ``;
+        }
+      });
+    }
   });
 }
 btnCheck.addEventListener("click", function () {
