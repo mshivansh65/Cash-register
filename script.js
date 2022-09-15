@@ -19,7 +19,7 @@ function hideSections() {
 hideSections();
 btnNext.addEventListener("click", function () {
   const value = Number(inputBillAmountEl.value);
-  if (value) {
+  if (value && value > 0) {
     billAmount = value;
     sections.forEach((section) => {
       if (section.classList.contains("section--cash-given")) {
