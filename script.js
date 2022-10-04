@@ -4,7 +4,25 @@ const inputBillAmountEl = document.querySelector(".bill-amount");
 const inputCashGivenEl = document.querySelector(".cash-given");
 const sections = document.querySelectorAll(".section");
 const tableContentsEl = document.querySelectorAll(".table-conc");
+// overlay
+const overlay = document.querySelector(".overlay");
+const message = document.querySelector("#message");
+const backdrop = document.querySelector(".backdrop");
+const overlayBtn = document.querySelector("#overlay-btn");
 
+function showMessage(recivedMessage = "") {
+  overlay.classList.remove("hidden");
+  backdrop.classList.remove("hidden");
+  message.innerHTML = recivedMessage;
+}
+function hideOverlay() {
+  overlay.classList.add("hidden");
+  backdrop.classList.add("hidden");
+}
+hideOverlay();
+overlayBtn.addEventListener("click", hideOverlay);
+backdrop.addEventListener("click", hideOverlay);
+// END OVERLAY CODE
 const numerators = [2000, 500, 100, 20, 10, 5, 1];
 const notesToGive = [0, 0, 0, 0, 0, 0, 0];
 let billAmount = 0;
@@ -69,6 +87,3 @@ btnCheck.addEventListener("click", function () {
     else if (Number.isNaN(value)) showMessage("Please enter a valid amount");
   }
 });
-function showMessage(Message) {
-  alert(Message);
-}
