@@ -37,6 +37,9 @@ function hideSections() {
 hideSections();
 btnNext.addEventListener("click", function () {
   const value = Number(inputBillAmountEl.value);
+  if (value === 0) {
+    showMessage("Bill amount entered is zero");
+  }
   if (value && value > 0) {
     billAmount = value;
     sections.forEach((section) => {
